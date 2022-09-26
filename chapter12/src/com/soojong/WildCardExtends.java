@@ -37,6 +37,7 @@ class Juice{
 }
 
 class Juicer{
+    // FruitBox에는 Fruit를 상속한 클래스만 제네릭 타입으로 가질 수 있다.
     static Juice makeJuice(FruitBox<? extends  Fruit> box){
         String tmp = "";
 
@@ -55,6 +56,8 @@ class Box<T>{
     public String toString(){return list.toString();}
 }
 
+// FruitBox에는 Fruit를 상속한 클래스만 T에 들어올 수 있다 (상한선을 제한. Fruit의 부모는 올 수 없다!!)
+// FruitBox는 Box를 상속한다
 class FruitBox<T extends Fruit> extends Box<T>{}
 
 
