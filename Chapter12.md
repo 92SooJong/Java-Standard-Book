@@ -36,3 +36,64 @@ public class Printer <T extends Animal & Serializable> {
 }
 ```
 
+It looks fine(Integer is sub-class of Object), but it doesn't work.
+Because List<Integer> is not sub-class of List<Object>.
+```java
+public class GenericMethodMain {
+
+    public static void main(String[] args) {
+        List<Integer> intList = new ArrayList<>();
+        intList.add(3);
+        //printList(intList); error!!
+
+    }
+    
+    private static void printList (List<Object> myList) {
+        System.out.println();
+    }
+
+}
+```
+you can use wild card(question mark) when you don't know what exactly generic type is going to be.
+```java
+public class GenericMethodMain {
+
+    public static void main(String[] args) {
+        List<Integer> intList = new ArrayList<>();
+        intList.add(3);
+        printList(intList); // it works
+
+    }
+    
+    private static void printList (List<?> myList) {
+        System.out.println();
+    }
+
+}
+```
+
+
+you can also use `extends` keyword for boundary in wild card.
+printList's parameter must be child of Animal.
+```java
+import com.soojong.generics.Animal;
+
+public class GenericMethodMain {
+
+    public static void main(String[] args) {
+        List<Integer> intList = new ArrayList<>();
+        intList.add(3);
+        //printList(intList);
+
+        List<Cat> catList = new ArrayList<>();
+        catList.add(new Cat());
+        printList(catList);
+
+    }
+
+    private static void printList(List<? extends Animal> myList) {
+        System.out.println();
+    }
+
+}
+```
