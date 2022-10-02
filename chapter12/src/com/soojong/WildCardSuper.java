@@ -12,16 +12,16 @@ import java.util.Comparator;
 public class WildCardSuper {
 
     public static void run(){
-        FruitBox1<Apple1> appleBox = new FruitBox1<>();
-        FruitBox1<Grape1> grapeBox = new FruitBox1<>();
+        FruitBox<Apple> appleBox = new FruitBox<>();
+        FruitBox<Grape> grapeBox = new FruitBox<>();
 
-        appleBox.add(new Apple1("GreenApple",300));
-        appleBox.add(new Apple1("GreenApple",100));
-        appleBox.add(new Apple1("GreenApple",200));
+        appleBox.add(new Apple("GreenApple",300));
+        appleBox.add(new Apple("GreenApple",100));
+        appleBox.add(new Apple("GreenApple",200));
 
-        grapeBox.add(new Grape1("GreenGrape",400));
-        grapeBox.add(new Grape1("GreenGrape",300));
-        grapeBox.add(new Grape1("GreenGrape",200));
+        grapeBox.add(new Grape("GreenGrape",400));
+        grapeBox.add(new Grape("GreenGrape",300));
+        grapeBox.add(new Grape("GreenGrape",200));
 
         Collections.sort(appleBox.getList(), new AppleComp());
         Collections.sort(grapeBox.getList(),new GrapeComp());
@@ -37,11 +37,11 @@ public class WildCardSuper {
     }
 }
 
-class Fruit1 {
+class Fruit {
     String name;
     int weight;
 
-    public Fruit1(String name, int weight) {
+    public Fruit(String name, int weight) {
         this.name = name;
         this.weight = weight;
     }
@@ -51,45 +51,45 @@ class Fruit1 {
     }
 }
 
-class Apple1 extends Fruit1{
-    Apple1(String name,int weight){
+class Apple extends Fruit{
+    Apple(String name,int weight){
         super(name,weight);
     }
 }
 
-class Grape1 extends Fruit1{
-    Grape1(String name,int weight){
+class Grape extends Fruit{
+    Grape(String name,int weight){
         super(name,weight);
     }
 }
 
-class AppleComp implements Comparator<Apple1> {
+class AppleComp implements Comparator<Apple> {
 
     @Override
-    public int compare(Apple1 t1, Apple1 t2) {
+    public int compare(Apple t1, Apple t2) {
         return t2.weight - t1.weight;
     }
 }
 
-class GrapeComp implements Comparator<Grape1> {
+class GrapeComp implements Comparator<Grape> {
 
     @Override
-    public int compare(Grape1 t1, Grape1 t2) {
+    public int compare(Grape t1, Grape t2) {
         return t2.weight - t1.weight;
     }
 }
 
-class FruitComp implements Comparator<Fruit1> {
+class FruitComp implements Comparator<Fruit> {
 
     @Override
-    public int compare(Fruit1 t1, Fruit1 t2) {
+    public int compare(Fruit t1, Fruit t2) {
         return t1.weight - t2.weight;
     }
 }
 
-class FruitBox1<T extends Fruit1> extends Box1<T>{}
+class FruitBox<T extends Fruit> extends Box<T>{}
 
-class Box1<T>{
+class Box<T>{
     ArrayList<T> list = new ArrayList<T>();
 
     void add(T item){ list.add(item);}
