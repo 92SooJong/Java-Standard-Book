@@ -19,4 +19,20 @@ class Fruit<T>{
 }
 ```
 
+You can use simultaneously class and interface for generic type. (Animal is class, Serializable is interface)
+Class must come before interface. Be careful that interface doesn't use `implements`.
+now generic Type (T) must be child of Animal & Serializable
+```java
+public class Printer <T extends Animal & Serializable> {
+    T thingToPrint;
+
+    public Printer(T thingToPrint) {
+        this.thingToPrint = thingToPrint;
+    }
+
+    public void print() {
+        System.out.println(thingToPrint);
+    }
+}
+```
 

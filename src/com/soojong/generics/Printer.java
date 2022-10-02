@@ -1,6 +1,8 @@
 package com.soojong.generics;
 
-public class Printer <T> {
+import java.io.Serializable;
+
+public class Printer <T extends Animal> {
     T thingToPrint;
 
     public Printer(T thingToPrint) {
