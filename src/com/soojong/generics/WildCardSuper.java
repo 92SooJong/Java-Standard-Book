@@ -1,4 +1,4 @@
-package com.soojong;
+package com.soojong.generics;
 
 import java.util.ArrayList;
 import java.util.Collections;
