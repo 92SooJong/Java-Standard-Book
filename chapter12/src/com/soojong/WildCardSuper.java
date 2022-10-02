@@ -23,11 +23,19 @@ public class WildCardSuper {
         grapeBox.add(new Grape("GreenGrape",300));
         grapeBox.add(new Grape("GreenGrape",200));
 
+        // check Collections.sort method, you can see following definition
+        // public static <T> void sort(List<T> list, Comparator<? super T> c)
+        // The point is `Comparator<? super T>`
+        // It means Comparator have to contain T or T`s parent Class
+        // AppleComp extends Comparator<Apple>
+        // Collections.sort uses AppleComp.compareTo() which is overridden from Comparator
         Collections.sort(appleBox.getList(), new AppleComp());
         Collections.sort(grapeBox.getList(),new GrapeComp());
         System.out.println("appleBox = " + appleBox);
         System.out.println("grapeBox = " + grapeBox);
 
+        // Apple & Grape are child of Fruit class
+        // So you can write code like this.
         Collections.sort(appleBox.getList(), new FruitComp());
         Collections.sort(grapeBox.getList(),new FruitComp());
         System.out.println("appleBox = " + appleBox);
@@ -87,6 +95,11 @@ class FruitComp implements Comparator<Fruit> {
     }
 }
 
+/**
+ * FruitBox class is child of Box class
+ * FruitBox can contain only child of Fruit.
+ * Fruit's parent can't be contained in FruitBox. It means we can limit super class line with Generic
+ */
 class FruitBox<T extends Fruit> extends Box<T>{}
 
 class Box<T>{
