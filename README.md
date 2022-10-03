@@ -4,3 +4,5 @@
 [Exception](Exception.md)
 
 [Generics](Generics.md)
+
+[Lambda expression](Lambda.md)
