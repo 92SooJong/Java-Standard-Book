@@ -80,8 +80,9 @@ public class GenericMethodMain {
 
 you can also use `extends` keyword for boundary in wild card.
 printList's parameter must be child of Animal.
+
 ```java
-import com.soojong.generics.Animal;
+import com.soojong.basic.generics.Animal;
 
 public class GenericMethodMain {
 

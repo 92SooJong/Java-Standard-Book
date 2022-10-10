@@ -1,7 +1,4 @@
-package com.soojong.exception;
-
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+package com.soojong.basic.exception;
 
 public class CheckedVsUncheckedMain {
 

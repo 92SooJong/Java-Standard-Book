@@ -1,4 +1,4 @@
-package com.soojong.generics;
+package com.soojong.basic.generics;
 
 public class MultiPrinter<T,V> {
     T thingToPrint;

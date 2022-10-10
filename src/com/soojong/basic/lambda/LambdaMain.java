@@ -1,4 +1,4 @@
-package com.soojong.lambda;
+package com.soojong.basic.lambda;
 
 public class LambdaMain {
 

@@ -1,6 +1,4 @@
-package com.soojong.generics;
-
-import java.util.ArrayList;
+package com.soojong.basic.generics;
 
 public class GenericsMain {
 

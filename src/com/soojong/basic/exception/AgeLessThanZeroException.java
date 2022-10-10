@@ -1,4 +1,4 @@
-package com.soojong.exception;
+package com.soojong.basic.exception;
 
 public class AgeLessThanZeroException extends IllegalArgumentException{
 
