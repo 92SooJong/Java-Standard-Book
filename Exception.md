@@ -18,6 +18,7 @@ public class CheckedVsUncheckedMain {
 ```
 ## How to Java determine Checked & Unchecked exception
 RuntimeException of subclasses are `Unchecked exception`
+
 ![img.png](images/Exception/img.png)
 
 `Unchecked exception` is a programming error and is fatal.
