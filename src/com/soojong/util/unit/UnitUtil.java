@@ -1,5 +1,7 @@
 package com.soojong.util.unit;
 
+import java.text.DecimalFormat;
+
 public class UnitUtil {
 
     public static double convertCentimeterToInch(double centimeter) {
@@ -11,7 +13,10 @@ public class UnitUtil {
     }
 
     public static double convertKilogramToPound(double kilogram) {
-        return (kilogram * WeightUnitEnum.KILOGRAM.getScaleFromGram()) * WeightUnitEnum.POUND.getScaleFromGram();
+
+        double pound = (kilogram * WeightUnitEnum.KILOGRAM.getScaleFromGram()) * WeightUnitEnum.POUND.getScaleFromGram();
+
+        return (double) Math.round(pound * 100) /100;
     }
 
 
