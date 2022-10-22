@@ -10,6 +10,8 @@ public class UnitMain {
 
         System.out.printf("%dkg => %f lb\n",84,UnitUtil.convertKilogramToPound(84));
 
+        System.out.printf("%dlbs => %f kg\n",10,UnitUtil.convertPoundToKilogram(10));
+
 
 
 

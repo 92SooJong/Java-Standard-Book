@@ -4,7 +4,7 @@ public enum WeightUnitEnum {
 
     GRAM("g", 1),
     KILOGRAM("kg",1000),
-    POUND("lb",0.00220462)
+    POUND("lbs",0.00220462)
     ;
 
     private final String symbol;
