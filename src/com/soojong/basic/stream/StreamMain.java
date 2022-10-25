@@ -26,7 +26,7 @@ public class StreamMain {
         int[] results = IntStream.iterate(0, step -> step + 1)
             .limit(10)
             .map(
-                operand -> operand * 2
+                operand -> operand
             ).toArray();
 
         // print results
