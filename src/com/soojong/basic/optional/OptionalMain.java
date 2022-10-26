@@ -8,24 +8,23 @@ import java.util.Optional;
 public class OptionalMain {
 
     public static void main(String[] args) {
-        List<String> aList = List.of("4", "6");
-        List<String> bList = List.of("11","12","13","11");
+
 
         Map<String,String> subjectMap = new HashMap<>();
         subjectMap.put("4", "four");
         subjectMap.put("6", "six");
 
         Map<String,String> itemMap = new HashMap<>();
-        itemMap.put("four.11","one-one-1");
-        itemMap.put("four.12","one-two");
-        itemMap.put("six.13","one-three");
-        itemMap.put("six.11","one-one-2");
+        itemMap.put("4.11","one-one-1");
+        itemMap.put("4.12","one-two");
+        itemMap.put("6.13","one-three");
+        itemMap.put("6.11","one-one-2");
 
-        String inputA = "4";
-        String inputB = "11";
-        String result = Optional.ofNullable(List.of(inputA,inputB))
-            .filter( m -> m.get(0).equals("4") || m.get(0).equals("6"))
-            .map( m -> subjectMap.get(m.get(0))+"."+ m.get(1))
+        Map<String, String> input = Map.of("input1", "4", "input2", "11");
+
+        String result = Optional.ofNullable(input)
+            .filter(m -> m.containsKey("input122"))
+            .map( m -> m.get("input1") + "." + m.get("input2"))
             .map(itemMap::get)
             .map( m -> "출력 :: " + m)
             .orElse("데이터없음");
