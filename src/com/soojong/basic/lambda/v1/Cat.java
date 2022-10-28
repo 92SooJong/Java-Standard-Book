@@ -1,4 +1,4 @@
-package com.soojong.basic.lambda;
+package com.soojong.basic.lambda.v1;
 
 public class Cat{
 
