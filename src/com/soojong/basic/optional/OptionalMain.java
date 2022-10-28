@@ -9,6 +9,37 @@ public class OptionalMain {
 
     public static void main(String[] args) {
 
+        int i = case3(2);
+        System.out.println(i);
+
+
+    }
+
+    public static int case3(int num) {
+
+        List<Integer> list = List.of(1, 2, 3, 4);
+
+        return list.stream()
+            .filter( a -> a == num)
+            .findFirst()
+            .orElse(0);
+
+
+
+    }
+
+    public static void case2(double num, double sum) {
+
+        double sizeItemRate = Optional.of(sum)
+            .filter(s -> s > 0)
+            .map(s -> num/s * 100 )
+            .orElse(0.0);
+
+        System.out.println(sizeItemRate);
+
+
+    }
+    public static void case1() {
 
         Map<String,String> subjectMap = new HashMap<>();
         subjectMap.put("4", "four");
@@ -30,5 +61,8 @@ public class OptionalMain {
             .orElse("데이터없음");
 
         System.out.println(result);
+
     }
+
+
 }
