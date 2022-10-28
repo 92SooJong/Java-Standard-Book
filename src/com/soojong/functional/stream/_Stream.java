@@ -32,6 +32,13 @@ public class _Stream {
             .mapToInt(String::length)
             .forEach(System.out::println);
 
+        System.out.println("====");
+        boolean containsOnlyFemales = people.stream()
+            .allMatch(person -> Gender.FEMALE == person.gender); // 모든 개체가 조건을 만족해야 true
+
+
+        System.out.println(containsOnlyFemales);
+
 
     }
 
