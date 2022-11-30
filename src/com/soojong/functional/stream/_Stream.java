@@ -39,6 +39,15 @@ public class _Stream {
 
         System.out.println(containsOnlyFemales);
 
+        // peek
+        List<String> collect = people.stream()
+            .map(p -> p.name.concat("suffix"))
+            //.peek(s -> s.name.concat("suffix"))
+            .collect(Collectors.toList());
+
+        System.out.println(collect);
+
+
 
     }
 
