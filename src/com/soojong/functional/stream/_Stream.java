@@ -9,12 +9,16 @@ import com.soojong.functional.SimpleCaseMain;
 public class _Stream {
 
     public static void main(String[] args) {
-        List<Person> people = List.of(
-            new Person("John", Gender.MALE),
-            new Person("Maria", Gender.FEMALE),
-            new Person("Aisha", Gender.FEMALE),
-            new Person("Alex", Gender.MALE),
-            new Person("Alice", Gender.FEMALE)
+
+        Person p = new Person("John", Gender.MALE);
+
+
+
+        List<Person> people = List.of( p
+//            new Person("Maria", Gender.FEMALE),
+//            new Person("Aisha", Gender.FEMALE),
+//            new Person("Alex", Gender.MALE),
+//            new Person("Alice", Gender.FEMALE)
         );
 
         people.stream()
@@ -40,12 +44,13 @@ public class _Stream {
         System.out.println(containsOnlyFemales);
 
         // peek
-        List<String> collect = people.stream()
-            .map(p -> p.name.concat("suffix"))
-            //.peek(s -> s.name.concat("suffix"))
+        List<Person> collect = people.stream()
+            .peek(s -> s.name.concat("suffix"))
+            //.map(p -> p.name.concat("suffix"))
             .collect(Collectors.toList());
 
-        System.out.println(collect);
+        System.out.println("====비교");
+        System.out.println(p == collect.get(0));
 
 
 
