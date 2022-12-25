@@ -1,12 +1,22 @@
-package com.soojong.jdk;
+package com.soojong.datastructure;
 
 import java.io.Serializable;
 import java.util.AbstractMap;
 import java.util.Map;
 import java.util.Set;
 
+
+// Definition of Hash : https://www.scaler.com/topics/data-structures/hashing-in-data-structure/
 public class CustomizedHashMap<K,V> extends AbstractMap<K,V> implements Map<K,V>, Cloneable, Serializable {
 
+    /**
+     *
+     * Capacity : the number of buckets
+     * Load factor : The Load Factor is a threshold,
+     *                  if the ratio of the current element by initial capacity crosses this threshold then the capacity increases
+     *                  so that the operational complexity of the HashMap remains O(1).
+     * Treeify :
+     */
     // int is 4-byte(32-bit)
     // 0000 0000 0000 0000 0000 0000 0001 0000
     static final int DEFAULT_INITIAL_CAPACITY = 1 << 4; // 16 = 2^4
