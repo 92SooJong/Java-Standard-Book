@@ -43,6 +43,9 @@ public class Student implements Comparable<Student>{
 
     @Override
     public int compareTo(Student student) {
+        // 양수면 파라미터보다 after에 위치
+        // 음수면 파라미터보다 before에 위치
+
         if (id == student.id){
             return 0;
         }else if (id > student.id){

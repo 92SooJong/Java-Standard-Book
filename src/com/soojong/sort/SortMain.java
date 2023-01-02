@@ -18,7 +18,11 @@ public class SortMain {
 
         //Collections.sort(studentList); // Comparable을 사용
         //Collections.sort(studentList, new IdComparator()); // Comparator를 사용
-        Collections.sort(studentList, new NameComparator()); // Comparator를 사용
+        //Collections.sort(studentList, new NameComparator()); // Comparator를 사용
+        studentList.sort((o1, o2) -> {
+            return o1.getName().compareTo(o2.getName());
+        });
+
 
         for (Student student : studentList) {
             System.out.printf("ID = %d , Name = %s \n", student.getId(), student.getName());
