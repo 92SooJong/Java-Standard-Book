@@ -1,4 +1,4 @@
-package com.soojong.array;
+package com.soojong.basic.array;
 
 import java.util.Arrays;
 
