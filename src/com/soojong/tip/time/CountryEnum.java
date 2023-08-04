@@ -5,18 +5,19 @@ import java.util.Arrays;
 public enum CountryEnum {
 
     KOREA("ko","Asia/Seoul", TimePeriod.from(23,0,2,40)),
-    JAPAN("jp", "Asia/Singapore", TimePeriod.from(18,0,0,30)),
-    SINGAPORE("sg", "Asia/Singapore", TimePeriod.from(18,0,0,30))
+    JAPAN("jp", "Asia/Tokyo", TimePeriod.from(18,0,0,30)),
+    SINGAPORE("sg", "Asia/Singapore", TimePeriod.from(18,0,0,30)),
+    UNITED_STATE("us", "America/New_York", TimePeriod.from(18,0,0,30)),
     ;
 
     private final String countryCode;
     private final String timeZone;
-    private final TimePeriod timePeriod;
+    private final TimePeriod notAllowedAlramTimePeriod;
 
-    CountryEnum(String countryCode, String timeZone, TimePeriod timePeriod) {
+    CountryEnum(String countryCode, String timeZone, TimePeriod notAllowedAlramTimePeriod) {
         this.countryCode = countryCode;
         this.timeZone = timeZone;
-        this.timePeriod = timePeriod;
+        this.notAllowedAlramTimePeriod = notAllowedAlramTimePeriod;
     }
 
     public static CountryEnum findByCode(String countryCode) {
@@ -31,7 +32,7 @@ public enum CountryEnum {
         return timeZone;
     }
 
-    public TimePeriod getTimePeriod() {
-        return timePeriod;
+    public TimePeriod getNotAllowedAlramTimePeriod() {
+        return notAllowedAlramTimePeriod;
     }
 }

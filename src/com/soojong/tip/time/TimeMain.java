@@ -1,28 +1,30 @@
 package com.soojong.tip.time;
 
-import java.time.Clock;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.ZoneId;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class TimeMain {
 
     public static void main(String[] args) {
 
-        ZoneId zoneId = ZoneId.of("Asia/Seoul");
-        System.out.println(isBetween("ko", LocalDateTime.now(zoneId)));
-
+        printAlarmStatus("ko");
+        printAlarmStatus("jp");
+        printAlarmStatus("sg");
+        printAlarmStatus("us");
 
     }
 
-    public static boolean isBetween(String countryCode, LocalDateTime localDateTime) {
+    public static void printAlarmStatus(String countryCode) {
 
         CountryEnum countryEnum = CountryEnum.findByCode(countryCode);
 
-        return countryEnum.getTimePeriod().isBetween(localDateTime);
+        ZoneId zoneId = ZoneId.of(countryEnum.getTimeZone());
+        LocalDateTime localDateTime = LocalDateTime.now(zoneId);
+
+        System.out.printf("Not allowed time range for alarm in %s is %s\n", zoneId.getId(), countryEnum.getNotAllowedAlramTimePeriod().toString());
+        System.out.printf("Current time in %s is %s\n", zoneId.getId(), localDateTime);
+        System.out.printf("Is Alarm allowed? : %s\n", !countryEnum.getNotAllowedAlramTimePeriod().isBetween(localDateTime));
+        System.out.println("================================================================================================");
 
     }
 
