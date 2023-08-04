@@ -4,7 +4,8 @@ import java.util.Arrays;
 
 public enum CountryEnum {
 
-    KOREA("ko", "Asia/Seoul", TimePeriod.from(23,0,2,40)),
+    KOREA("ko","Asia/Seoul", TimePeriod.from(23,0,2,40)),
+    JAPAN("jp", "Asia/Singapore", TimePeriod.from(18,0,0,30)),
     SINGAPORE("sg", "Asia/Singapore", TimePeriod.from(18,0,0,30))
     ;
 
