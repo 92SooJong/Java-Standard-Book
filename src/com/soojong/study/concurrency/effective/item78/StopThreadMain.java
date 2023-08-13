@@ -1,4 +1,4 @@
-package com.soojong.study.concurrency;
+package com.soojong.study.concurrency.effective.item78;
 
 import java.util.concurrent.TimeUnit;
 
