@@ -1,16 +1,34 @@
 package com.soojong.study.practice;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class PracticeMain {
+
+    public static class A {
+        private Long num;
+
+        public static A of(Long a) {
+            A a1 = new A();
+            a1.num = a;
+            return a1;
+        }
+
+    }
 
     public static void main(String[] args) {
 
-        int number = 1 << 4;
-        System.out.println(number);
-        int max = 1 << 30;
-        System.out.println(max);
 
-        Double value = Double.parseDouble("");
-        System.out.println(value);
+
+        Map<String, A> map = new HashMap<>();
+        map.put("aaa", A.of(1L));
+        map.put("bbb", A.of(null));
+
+        if (map.containsKey(null)) {
+            System.out.println("NULL");
+        }
+
+
 
     }
 
