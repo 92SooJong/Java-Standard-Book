@@ -1,9 +1,7 @@
-package com.soojong.tip.time;
+package com.soojong.tip.time.timezone;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.time.ZoneOffset;
-import java.time.ZonedDateTime;
 
 public class TimeMain {
 

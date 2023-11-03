@@ -1,7 +1,6 @@
-package com.soojong.tip.time;
+package com.soojong.tip.time.timezone;
 
 import java.time.LocalDateTime;
-import java.time.Period;
 
 public class TimePeriod {
 

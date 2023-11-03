@@ -1,4 +1,4 @@
-package com.soojong.tip.time;
+package com.soojong.tip.time.timezone;
 
 import java.util.Arrays;
 
